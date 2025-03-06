@@ -1,0 +1,28 @@
+.temperature-container {
+position: absolute;
+bottom: 20px;
+right: 20px;
+background: rgba(0, 0, 0, 0.8);
+color: white;
+padding: 10px 15px;
+border-radius: 8px;
+font-size: 16px;
+text-align: center;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.temperature-city {
+font-size: 18px;
+font-weight: bold;
+}
+
+.temperature-value {
+font-size: 22px;
+font-weight: bold;
+}
+
+.temperature-condition {
+font-size: 14px;
+opacity: 0.8;
+} 
+
