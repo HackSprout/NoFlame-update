@@ -1,19 +1,4 @@
-// import React, { useEffect, useState } from 'react';
-// import './Title.css';
-
-// function Title (){
-//     return(
-//         <div className='NoFlame'>
-//             <h1 className='name'>NoFlame</h1>
-//             <h1 className='date'><Date className='date'>Date</Date></h1>
-//         </div>
-//     );
-// }
-
-
-// export default Title
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Title.css';
 
 function Title() {
@@ -22,7 +7,6 @@ function Title() {
 
   return (
     <div className='NoFlame'>
-    {/* <img className = 'logo' src='./src/assets/noFlameLogo.jpg'></img> */}
       <div className='logo-name'>
         <img className = 'logo' src='./src/assets/noFlameLogo.jpg'>
         </img>

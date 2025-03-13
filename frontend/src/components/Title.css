@@ -5,9 +5,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between; /* Pushes elements to edges */
-    border: 1px solid rgba(0, 247, 255, 0.1);
     color: #fff;
-    /* padding: 10px 5%; */
+    padding: 10px 5%;
 }
 
 .logo-name {
@@ -24,24 +23,13 @@
 }
 
 .name {
-    font-size: 1.5rem;
     font-weight: bold;
-    border: 1px solid rgba(0, 247, 255, 0.1);
 }
 
 .date {
     position: absolute;
-    /* position: sticky; */ 
-    font-size: 2rem;
     font-weight: bold;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    border: 1px solid #00f7ff1a;
-}
-
-@media screen and (max-width: 768px) {  /* Adjust breakpoint if needed */
-    .logo-name, .date {
-        display: none;
-    }
 }
