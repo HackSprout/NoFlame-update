@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './FireRisk.css';
 
-function FireRisk() {
+const FireRisk = () => {
   return (
-    <div className='container'>
+    <div className='section'>
       <div className='FireLikelihood'>
         ummmmmm
       </div>
