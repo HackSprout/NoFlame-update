@@ -43,7 +43,17 @@ function Map({ setLatLon }) {
   return (
     <div>
       {position ? (
-        <MapContainer center={position} zoom={13} style={{ width: "100%", height: "80vh" }}>
+        <MapContainer 
+        center={position} 
+        zoom={13} 
+        style={{ 
+          width: "40vw", 
+          height: "80vh", 
+          bottom: "670px", 
+          left: "58%", 
+          borderRadius: "40px"
+        }}>
+      
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
