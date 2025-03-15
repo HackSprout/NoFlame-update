@@ -27,7 +27,7 @@ function Temperature({ lat, lon }) {
         })
         .catch(error => console.error("❌ Error fetching weather data:", error));
     }
-  }, [lat, lon]); // 🔥 Re-run when lat/lon change
+  }, [lat, lon]); // Re-run when lat/lon change
 
   return (
     <div className="temperature-container">
