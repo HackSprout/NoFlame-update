@@ -20,7 +20,8 @@
   border: 1px solid rgba(0, 247, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
-  
+  display: flex;
+  justify-content: center;
 }
 
 .FireAnimation {
@@ -34,6 +35,8 @@
   border: 1px solid rgba(0, 247, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 :root {

@@ -62,7 +62,7 @@ function Map({ setLatLon }) {
             setMarkerPosition([lat, lon]);
             setLatLon(lat, lon);
           }} />
-          {/* ✅ Markers */}
+          {/* Markers */}
           {markerPosition && <Marker position={markerPosition} />}
           {position && <Marker position={position} icon={redIcon} />}
         </MapContainer>
