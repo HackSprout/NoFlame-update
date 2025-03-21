@@ -2,7 +2,8 @@
 
 .section {
   display: flex;
-  gap: 40px;
+  padding-top: 2%;
+  gap: 6%;
   color: white;
   font-size: 1.5rem;
   font-family: "Keania One", sans-serif;
@@ -11,29 +12,29 @@
 .FireLikelihood {
   /* background: linear-gradient(180deg, #041325 0%, #000000 100%); */
   /* background: rgba(255, 255, 255, 0.5); */
-  top: 2rem;
-  left: 7rem;
-  width: 450px;
-  height: 200px;
+  top: 1.5rem;
+  left: 6rem;
+  width: 25vw;
+  height: auto;
+  min-height: 25vh;
   padding: 20px;
   border-radius: 40px;
   border: 1px solid rgba(0, 247, 255, 0.1);
-  transition: all 0.3s ease;
   position: relative;
   display: flex;
   justify-content: center;
 }
 
 .FireAnimation {
-  top: 2rem;
-  left: 8rem;
-  width: 450px;
-  height: 200px;
+  top: 1.5rem;
+  left: 4rem;
+  width: 25vw;
+  height: auto;
+  min-height: 25vh;
   padding: 20px;
   border-radius: 40px;
   gap: 20px;
   border: 1px solid rgba(0, 247, 255, 0.1);
-  transition: all 0.3s ease;
   position: relative;
   display: flex;
   justify-content: center;
@@ -70,7 +71,7 @@
   mix-blend-mode: color-dodge;
   filter: brightness(3.7) blur(7px) contrast(6);
   animation: fire 1.75s linear infinite;
-  box-shadow: inset 0 -35px 50px -60px #63bbc5;
+  box-shadow: inset 0 -30px 50px -60px #63bbc5;
 }
 
 @keyframes fire {

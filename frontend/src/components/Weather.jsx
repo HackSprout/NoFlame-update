@@ -6,11 +6,17 @@ const Weather = () => {
     <div className='format'>
         <div className='main-weather'>
             Location
+            <br/>
             Temperature
+            <br/>
             Feels like
+            <br/>
             Cloud classification
+            <br/>
             Wind speed
+            <br/>
             Wind direction
+            
         </div>
 
         <div className='week-forecast'>
