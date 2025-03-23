@@ -19,6 +19,8 @@ function Title() {
           (day) => day + (["st", "nd", "rd"][(day % 10 - 1)] || "th")
         )}
       </h1>
+
+      <h2 className='link'>Picture</h2>
     </div>
   );
 }

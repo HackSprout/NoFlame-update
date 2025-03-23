@@ -24,8 +24,9 @@ function ClickableMap({ setLatLon }) {
 }
 
 function Map({ setLatLon }) {
-  const [position, setPosition] = useState(null);  // 🔹 Start with `null`
+  const [position, setPosition] = useState(null);  // Start with `null`
   const [markerPosition, setMarkerPosition] = useState(null); 
+  // const [latlon, setLatLon] = useState(null); 
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -34,11 +35,11 @@ function Map({ setLatLon }) {
           const { latitude, longitude } = pos.coords;
           setMarkerPosition([latitude, longitude]);
           setPosition([latitude, longitude]);
-          setLatLon(latitude, longitude);
+          // setLatLon(latitude, longitude);
         },
         (error) => {
           console.error("❌ Geolocation error:", error);
-          setPosition([37.7749, -122.4194]); // 🔹 Fallback to SF if location fails
+          setPosition([37.7749, -122.4194]); // Fallback to SF if location fails
         }
       );
     }
@@ -65,7 +66,7 @@ function Map({ setLatLon }) {
           {position && <Marker position={position} icon={redIcon} />}
         </MapContainer>
       ) : (
-        <p>Loading map...</p> // ✅ Shows a loading message until location is found
+        <p>Loading map...</p> // Shows a loading message until location is found
       )}
     </div>
   );

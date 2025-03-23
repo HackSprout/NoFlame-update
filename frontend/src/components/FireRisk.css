@@ -12,8 +12,7 @@
 .FireLikelihood {
   /* background: linear-gradient(180deg, #041325 0%, #000000 100%); */
   /* background: rgba(255, 255, 255, 0.5); */
-  top: 1.5rem;
-  left: 6rem;
+  left: 5rem;
   width: 25vw;
   height: auto;
   min-height: 25vh;
@@ -26,8 +25,7 @@
 }
 
 .FireAnimation {
-  top: 1.5rem;
-  left: 4rem;
+  left: 3rem;
   width: 25vw;
   height: auto;
   min-height: 25vh;
