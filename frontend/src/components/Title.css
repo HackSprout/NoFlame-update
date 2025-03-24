@@ -26,6 +26,7 @@
 }
 
 .name {
+    gap: 60px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -36,4 +37,56 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+}
+
+.links {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+.github-link, 
+.devpost-link {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+    text-decoration: none; /* removes underline */
+    overflow: hidden;
+    padding: 2px 5px;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+    margin-left: -80px;
+}
+
+.github_logo, .devpost_logo {
+    width: 45px;
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+.github_text, .devpost_text {
+  opacity: 0;
+  white-space: nowrap;
+  color: white;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.github-link:hover, .devpost-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.devpost-link:hover .devpost_logo {
+    transform: translateX(-5px);
+}
+
+.github-link:hover .github_logo {
+    transform: translateX(5px);
+}
+
+.github-link:hover .github_text,
+.devpost-link:hover .devpost_text {
+    opacity: 1;
 }

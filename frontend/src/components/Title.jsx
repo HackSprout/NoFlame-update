@@ -19,8 +19,29 @@ function Title() {
           (day) => day + (["st", "nd", "rd"][(day % 10 - 1)] || "th")
         )}
       </h1>
+      
+      <div className='links'>
+        {/* allows hyperlink */}
+        <a
+          href='https://github.com/NoFlame-Dev/NoFlame-update'
+          className='github-link'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <span className='github_text'>GitHub</span>
+          <img className='github_logo' src='./src/assets/white_github.png' alt='GitHub Logo' />
+        </a>
 
-      <h2 className='link'>Picture</h2>
+        <a
+          href='https://devpost.com/software/noflame'
+          className='devpost-link'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <img className='devpost_logo' src='./src/assets/white_devpost.png' alt='Devpost Logo' />
+          <span className='devpost_text'>Devpost</span>
+        </a>
+      </div>
     </div>
   );
 }
