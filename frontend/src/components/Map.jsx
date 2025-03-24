@@ -30,7 +30,7 @@ function Map({ setLatLon, defaultLatLon }) {
     }
   }, [defaultLatLon]);
 
-  return (
+  return ( 
     <div className='map'>
       {defaultLatLon ? (
         <MapContainer
