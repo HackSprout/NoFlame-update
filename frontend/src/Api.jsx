@@ -11,7 +11,7 @@ const normalizeCoord = (coord) => {
       lon: ((coord.lon + 180) % 360 + 360) % 360 - 180
     };
   };
-
+ 
 export async function getWeatherByCoords(lat, lon) {
     const { lat: safeLat, lon: safeLon } = normalizeCoord({ lat, lon });
 

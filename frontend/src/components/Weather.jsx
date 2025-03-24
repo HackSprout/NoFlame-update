@@ -48,13 +48,15 @@ function Weather({ latLon }) {
     <div className='format'>
       {weather ? (
         <div className='main-weather'>
-          Location: {weather.location.name}, {weather.location.region}
+          <h3>{weather.location.name}, {weather.location.region}</h3>
           <br />
           Temperature: {weather.current.temp_f}°F
           <br />
           Feels like: {weather.current.feelslike_f}°F
           <br />
           Condition: {weather.current.condition.text}
+          <br />
+          Humidity: {weather.current.humidity}
           <br />
           Wind: {weather.current.wind_mph} mph, {weather.current.wind_dir}
         </div>

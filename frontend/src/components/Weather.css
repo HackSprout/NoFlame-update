@@ -8,11 +8,11 @@
   font-weight: bold;
 }
 
-.main-weather {
+.main-weather, .week-forecast {
   top: 2rem;
   left: 5rem;
   width: 25vw;
-  min-height: 45vh; /*change later to smaller val*/
+  min-height: 45vh;
   height: auto;
   max-height: 50vh;
   padding: 20px;
@@ -24,16 +24,5 @@
 }
 
 .week-forecast {
-  top: 2rem;
   left: 3rem;
-  width: 25vw;
-  min-height: 40vh;
-  height: auto;
-  max-height: 50vh;
-  padding: 20px;
-  border-radius: 40px;
-  gap: 20px;
-  border: 1px solid rgba(0, 247, 255, 0.1);
-  position: relative;
-  overflow-y: auto;
 }

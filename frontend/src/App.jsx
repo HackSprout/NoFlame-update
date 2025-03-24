@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <Title />
-      <FireRisk />
+      <FireRisk latLon={latLon} />
       <Weather latLon={latLon} />
       <Map
         setLatLon={(lat, lon) => setLatLon({ lat, lon })}
