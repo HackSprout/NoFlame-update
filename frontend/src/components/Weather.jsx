@@ -8,10 +8,36 @@ function Weather({ latLon }) {
 
   useEffect(() => {
     if (latLon?.lat && latLon?.lon) {
-      getWeatherByCoords(latLon.lat, latLon.lon).then(setWeather);
-      getWeekForecast(latLon.lat, latLon.lon).then(setForecast);
+      getWeatherByCoords(latLon.lat, latLon.lon)
+        .then((data) => {
+          if (data.error) {
+            console.warn("WeatherAPI error:", data.error.message);
+            setWeather(null);
+          } else {
+            setWeather(data);
+          }
+        })
+        .catch((err) => {
+          console.error("Weather fetch failed:", err.message);
+          setWeather(null);
+        });
+  
+      getWeekForecast(latLon.lat, latLon.lon)
+        .then((data) => {
+          if (!Array.isArray(data)) {
+            console.warn("Invalid forecast data");
+            setForecast([]);
+          } else {
+            setForecast(data);
+          }
+        })
+        .catch((err) => {
+          console.error("Forecast fetch failed:", err.message);
+          setForecast([]);
+        });
     }
   }, [latLon]);
+  
 
   const formatToWeekday = (dateStr) => {
     return new Date(dateStr).toLocaleDateString("en-US", { weekday: "long" });
