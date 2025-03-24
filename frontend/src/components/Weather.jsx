@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import './Weather.css'
-import { getWeatherByCity } from '../Api.jsx'
+// import { getWeatherByCity } from '../Api.jsx'
+import { getWeatherByCoords, getWeekForecast } from '../Api.jsx';
 
-function Weather() {
+function Weather({ latLon }) {
   const [weather, setWeather] = useState(null);
+  const [forecast, setForecast] = useState([]);
 
   useEffect(() => {
-    getWeatherByCity("Temple City").then(data => { setWeather(data); });
-    // 
-  }, []);
+    if (latLon?.lat && latLon?.lon) {
+      getWeatherByCoords(latLon.lat, latLon.lon).then(data => setWeather(data) );
+      getWeekForecast(latLon.lat, latLon.lon).then(data => setForecast(data) );
+    }
+  }, [latLon]);
 
   const getWindDirection = (deg) => {
     const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
     return directions[Math.round(deg / 45) % 8];
+  }
+
+  const formatDate = (timestamp) => {
+    return new Date(timestamp * 1000).toLocaleDateString("en-US", {weekday: 'long'});
   }
 
   return (
@@ -37,7 +45,15 @@ function Weather() {
       )}
 
         <div className='week-forecast'>
-            monday
+          {forecast.length > 0 ? (
+            forecast.map((day, index) => (
+              <div key={index}>
+                {formatDate(day.dt)}: {day.temp.day}°F
+              </div>
+            ))
+          ) : (
+            <p>Loading weekly forecast...</p>
+          )}
         </div>
     </div>
   );
