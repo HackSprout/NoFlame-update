@@ -42,27 +42,45 @@ function Weather({ latLon }) {
   const formatToWeekday = (dateStr) => {
     return new Date(dateStr).toLocaleDateString("en-US", { weekday: "long" });
   };
+
+  const getConditionEmoji = (conditionText) => {
+    const lower = conditionText.toLowerCase();
+    if (lower.includes("sunny")) return "☀️";
+    if (lower.includes("clear")) return "🌤️";
+    if (lower.includes("cloud")) return "☁️";
+    if (lower.includes("overcast")) return "🌥️";
+    if (lower.includes("drizzle")) return "🌦️";
+    if (lower.includes("rain")) return "🌧️";
+    if (lower.includes("thunder")) return "⛈️";
+    if (lower.includes("snow")) return "❄️";
+    if (lower.includes("blizzard")) return "🌨️❄️";
+    if (lower.includes("fog") || lower.includes("mist")) return "🌫️";
+    if (lower.includes("wind")) return "💨";
+    return "🌈"; // default/fallback emoji
+  };  
   
 
   return (
     <div className='format'>
+      <div className='main-weather'>
       {weather ? (
-        <div className='main-weather'>
-          <h3>{weather.location.name}, {weather.location.region}</h3>
+        <>
+          {weather.location.name}, {weather.location.region}
           <br />
           Temperature: {weather.current.temp_f}°F
           <br />
           Feels like: {weather.current.feelslike_f}°F
           <br />
-          Condition: {weather.current.condition.text}
+          Condition: {getConditionEmoji(weather.current.condition.text)} {weather.current.condition.text}
           <br />
           Humidity: {weather.current.humidity}
           <br />
           Wind: {weather.current.wind_mph} mph, {weather.current.wind_dir}
-        </div>
+        </>
       ) : (
         <p>Loading weather data...</p>
       )}
+      </div>
 
       <div className='week-forecast'>
         {forecast.length > 0 ? (

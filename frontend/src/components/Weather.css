@@ -9,18 +9,25 @@
 }
 
 .main-weather, .week-forecast {
+  background: linear-gradient(180deg, #999fa80c 0%, #7c76761f 100%);
+  box-shadow: 0 5px 15px rgba(8, 13, 11, 0.8);
   top: 2rem;
   left: 5rem;
   width: 25vw;
-  min-height: 45vh;
   height: auto;
+  min-height: 45vh; /*change later to smaller val*/
   max-height: 50vh;
   padding: 20px;
   border-radius: 40px;
-  gap: 20px;
   overflow-y: auto;
   border: 1px solid rgba(0, 247, 255, 0.1);
   position: relative;
+  display: grid;
+  justify-content: center;
+}
+
+.main-weather {
+  line-height: 1.8;
 }
 
 .week-forecast {
