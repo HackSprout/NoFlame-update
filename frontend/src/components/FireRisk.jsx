@@ -50,6 +50,18 @@ const FireRisk = ({ latLon }) => {
     return "linear-gradient(135deg, red, darkred)";
   };
 
+  const getFireSizeClass = (risk) => {
+    if (risk <= 25) return "fire-small";
+    if (risk <= 50) return "fire-medium";
+    if (risk <= 75) return "fire-large";
+    return "fire-xlarge";
+  };
+
+  const getFireScale = (risk) => {
+    if (risk === null) return 1;
+    return 0.5 + (risk / 100) * 0.55;
+  };
+
   return (
     <div className='section'>
       <div className='FireLikelihood' style={{
@@ -58,7 +70,9 @@ const FireRisk = ({ latLon }) => {
         Likelihood of fire
       </div>
       <div className='FireAnimation'>
-        <div className='fire'>
+        <div className='fire' style={{
+          '--fire-scale': getFireScale(fireRisk)
+        }}>
           Risk Factor: {fireRisk !== null ? `${fireRisk}%` : "Loading..."}
         </div>
       </div>
