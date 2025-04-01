@@ -1,0 +1,55 @@
+@media (max-width: 768px) {
+    .NoFlame {
+        display: flex;
+        padding: 15px;
+    }
+
+    .name {
+        font-size: 1rem;
+        margin-left: -50%;
+        margin-bottom: 45%;
+    }
+
+    .date {
+        transform: none;
+        font-size: 1rem;
+        margin-left: -10%;
+    }
+
+    .links {
+        justify-content: flex-end;
+        margin-right: -16%;
+    }
+
+    .FireLikelihood,
+    .FireAnimation {
+        width: 45vw;
+        min-height: 10vh;
+        font-size: medium;
+    }
+
+    .map {
+        width: 98vw;
+        right: -1%;
+        max-height: 40vh;
+        margin-top: 25%;
+    }
+
+    .main-weather,
+    .week-forecast {
+        width: 45vw;
+        min-height: 10vh;
+        margin-top: 88%;
+        font-size: medium;
+    }
+
+    .FireLikelihood,
+    .main-weather {
+        left: 3%;
+    }
+
+    .FireAnimation,
+    .week-forecast {
+        left: 1%
+    }
+}

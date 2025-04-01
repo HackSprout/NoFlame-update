@@ -3,6 +3,7 @@ import Title from './components/Title';
 import FireRisk from './components/FireRisk';
 import Weather from './components/Weather';
 import Map from './components/Map';
+import './App.css';
 
 function App() {
   const [latLon, setLatLon] = useState(null);
