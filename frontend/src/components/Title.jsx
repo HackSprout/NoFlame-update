@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Title.css';
 
+import NoFlameLogo from '../assets/noFlameLogo.jpg';
+import GitHubLogo from '../assets/white_github.png';
+import DevpostLogo from '../assets/white_devpost.png';
+
 function Title() {
   const date = new Date();
   const options = { month: 'long', day: 'numeric', year: 'numeric' };
@@ -8,8 +12,7 @@ function Title() {
   return (
     <div className='NoFlame'>
       <div className='logo-name'>
-        <img className = 'logo' src='./src/assets/noFlameLogo.jpg'>
-        </img>
+        <img className='logo' src={NoFlameLogo} alt="NoFlame Logo" />
         <h1 className='name'>NoFlame</h1>
       </div>
       
@@ -29,7 +32,7 @@ function Title() {
           rel='noopener noreferrer'
         >
           <span className='github_text'>GitHub</span>
-          <img className='github_logo' src='./src/assets/white_github.png' alt='GitHub Logo' />
+            <img className='github_logo' src={GitHubLogo} alt='GitHub Logo' />
         </a>
 
         <a
@@ -38,7 +41,7 @@ function Title() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img className='devpost_logo' src='./src/assets/white_devpost.png' alt='Devpost Logo' />
+          <img className='devpost_logo' src={DevpostLogo} alt='Devpost Logo' />
           <span className='devpost_text'>Devpost</span>
         </a>
       </div>
