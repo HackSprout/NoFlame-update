@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+.section {
+  display: flex;
+  padding-top: 2%;
+  gap: 6%;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.FireLikelihood, .FireAnimation {
+  background: linear-gradient(180deg, #999fa80c 0%, #7c76761f 100%);
+  box-shadow: 0 5px 15px rgba(8, 13, 11, 0.8);
+  left: 5rem;
+  width: 25vw;
+  height: auto;
+  min-height: 25vh;
+  padding: 20px;
+  border-radius: 40px;
+  border: 1px solid rgba(92, 201, 205, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.FireAnimation {
+  left: 3rem;
+}
+
+:root {
+  --glitter: url("https://assets.codepen.io/13471/silver-glitter-background.png");
+  --fire-scale: 1;
+}
+
+.fire::before,
+.fire::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin-bottom: 13px;
+}
+
+.fire::before {
+  content: "";
+  background-image: var(--glitter), var(--glitter),
+      linear-gradient(
+          0deg,
+          white 0px,
+          #ff8951 5px,
+          #dcbc169c calc(30% * var(--fire-scale)),
+          transparent calc(70% * var(--fire-scale))
+      ),
+  radial-gradient(ellipse at bottom, transparent calc(30% * var(--fire-scale)), black calc(60% * var(--fire-scale)));
+  background-size: 350px 500px, 400px 650px, 100% 100%, 100% 100%;
+  background-blend-mode: hard-light, color-dodge, multiply;
+  background-position: 0px 0px, 0px 0px, var(--gradientPos);
+  background-repeat: repeat, repeat, repeat, no-repeat;
+  mix-blend-mode: color-dodge;
+  filter: brightness(calc(3.7 * var(--fire-scale))) blur(7px) contrast(6);
+  animation: fire 1.75s linear infinite;
+  box-shadow: inset 0 -30px 40px -60px #63bbc5;
+  transform: scale(var(--fire-scale));
+}
+
+@keyframes fire {
+  0% {
+      background-position: center 0px, center 0px, 50% 100%, center center;
+  }
+  100% {
+      background-position: center -500px, center -650px, 50% 100%, center center;
+  }
+}
